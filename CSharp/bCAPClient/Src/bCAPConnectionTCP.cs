@@ -26,6 +26,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -50,6 +51,8 @@ namespace ORiN2.bCAP
         {
             try
             {
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+                ServicePointManager.Expect100Continue = false;
                 m_tcpStream = new TcpClient();
                 var iar = m_tcpStream.BeginConnect(optEth.DstAddr, optEth.DstPort, null, null);
                 if (!iar.IsCompleted)

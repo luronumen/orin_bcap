@@ -54,6 +54,8 @@ namespace ORiN2.bCAP
         {
             try
             {
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+                ServicePointManager.Expect100Continue = false;
                 m_ipEpSend = new IPEndPoint(IPAddress.Parse(optEth.DstAddr), optEth.DstPort);
                 m_udpStream = new UdpClient(
                     new IPEndPoint(IPAddress.Parse(optEth.SrcAddr), optEth.SrcPort)
