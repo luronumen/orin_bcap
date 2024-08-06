@@ -22,12 +22,6 @@
  * THE SOFTWARE.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace ORiN2.bCAP
 {
     public partial class bCAPClient : IDisposable

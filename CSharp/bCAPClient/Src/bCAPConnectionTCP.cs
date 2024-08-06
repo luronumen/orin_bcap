@@ -22,15 +22,8 @@
  * THE SOFTWARE.
  */
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using ORiN2.Library;
 
 namespace ORiN2.bCAP
@@ -77,9 +70,9 @@ namespace ORiN2.bCAP
                 m_conv = new bCAPPacketConverter();
                 m_lock = new object();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -146,9 +139,9 @@ namespace ORiN2.bCAP
                             break;
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        throw ex;
+                        throw;
                     }
                 }
             }

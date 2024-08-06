@@ -22,14 +22,8 @@
  * THE SOFTWARE.
  */
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 using ORiN2.Library;
 
 namespace ORiN2.bCAP
@@ -66,9 +60,9 @@ namespace ORiN2.bCAP
                 m_conv = new bCAPPacketConverter();
                 m_lock = new object();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -131,9 +125,9 @@ namespace ORiN2.bCAP
                         break;
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    throw ex;
+                    throw;
                 }
             }
 
@@ -166,14 +160,14 @@ namespace ORiN2.bCAP
                     // パケットを受信
                     recv = RecvPacket(send.iSerial);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     // リトライ回数を超過するまで繰り返す
                     iRetry++;
                     if (iRetry < m_iRetry) goto retry_proc;
 
                     // 例外をスロー
-                    throw ex;
+                    throw;
                 }
             }
 

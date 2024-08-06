@@ -22,12 +22,7 @@
  * THE SOFTWARE.
  */
 
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.IO;
-using System.Text;
 using ORiN2.Library;
 
 namespace ORiN2.bCAP

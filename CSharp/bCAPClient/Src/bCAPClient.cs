@@ -22,11 +22,6 @@
  * THE SOFTWARE.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
 using ORiN2.Library;
 
 namespace ORiN2.bCAP
