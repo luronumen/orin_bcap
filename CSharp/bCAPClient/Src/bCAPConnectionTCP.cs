@@ -21,7 +21,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using System.Net;
 using System.Net.Sockets;
 
 namespace ORiN2.bCAP;
@@ -42,8 +41,6 @@ internal class bCAPConnectionTCP : bCAPConnectionBase
     {
         try
         {
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
-            ServicePointManager.Expect100Continue = false;
             m_tcpStream = new TcpClient();
             var iar = m_tcpStream.BeginConnect(optEth.DstAddr, optEth.DstPort, null, null);
             if (!iar.IsCompleted)
